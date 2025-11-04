@@ -1,0 +1,16 @@
+{
+  "name": "Tandem M&G",
+  "short_name": "TandemMG",
+  "description": "Fotografía y creatividad personalizada — Un amor, un arte.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#E28AA7",
+  "background_color": "#FAFAFA",
+  "icons": [
+    {
+      "src": "assets/img/logo_initials.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

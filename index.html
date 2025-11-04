@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tandem M&G — Un amor, un arte</title>
+  <link rel="icon" href="assets/img/logo_initials.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top"><span class="logo-dot"></span><span>Tandem M&G</span></a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu">&#9776;</button>
+      <nav id="nav" class="nav">
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a class="btn btn-outline" href="#contacto">Contacto</a>
+        <button id="cart-btn" class="icon-btn" aria-label="Carrito" type="button" title="Carrito">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 .001 3.999A2 2 0 0 0 17 18zM6.2 6l.31 2h11.6l-1.1 6.3a2 2 0 0 1-2 1.7H9.05a2 2 0 0 1-2-1.6L6.1 6.9 6 6H4V4h2.7a1 1 0 0 1 .98.82L8 10h9.25l.55-3H6.51L6.2 6z" fill="currentColor"/>
+          </svg>
+          <span id="cart-count" class="badge">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1 class="h-romantic">Tandem M&G</h1>
+      <p>Un amor, un arte — Fotografía & creatividad personalizada.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#productos">Ver productos</a>
+        <a class="btn btn-outline" href="#contacto">Escríbenos</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="productos" class="container section products-section">
+      <h2 class="section-title">Nuestros regalos</h2>
+      <div id="products-grid" class="grid"></div>
+    </section>
+
+    <section id="nosotros" class="container section about-section">
+      <div class="about-inner">
+        <div class="about-text">
+          <h2 class="section-title h-romantic">Nosotros</h2>
+          <p>Somos M & G. Creemos que cada detalle cuenta.</p>
+        </div>
+        <div class="about-media"><div class="ph"></div></div>
+      </div>
+    </section>
+
+    <section id="contacto" class="container section contact-section">
+      <h2 class="section-title">Contacto</h2>
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="row">
+          <label>Nombre<input type="text" name="name" required></label>
+          <label>Email<input type="email" name="email" required></label>
+        </div>
+        <label>Mensaje<textarea name="message" rows="5" required></textarea></label>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <span id="form-status" aria-live="polite"></span>
+        </div>
+      </form>
+      <p class="social">Facebook: <a href="https://www.facebook.com/share/1AG4KSmcHR/" target="_blank" rel="noopener">Equipo Tandem M&G</a> · Correo: <a href="mailto:support@tandemmyg.com">support@tandemmyg.com</a></p>
+    </section>
+
+    <aside id="cart-panel" class="cart-panel" hidden>
+      <div class="cart-header">
+        <strong>Carrito</strong>
+        <button id="cart-close" class="btn btn-outline" type="button">Cerrar</button>
+      </div>
+      <ul id="cart-items" class="cart-items"></ul>
+      <div class="cart-footer">
+        <div>Total: <strong id="cart-total">$0</strong></div>
+        <button id="cart-checkout" class="btn btn-primary" type="button">Continuar</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="h-romantic">TANDEM M&G</h3>
+          <p>Regalos personalizados únicos.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <p>📧 <a href="mailto:support@tandemmyg.com">support@tandemmyg.com</a></p>
+          <p>📍 20 de Noviembre, Acala, México</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/share/1AG4KSmcHR/" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Enlaces Rápidos</h3>
+          <p><a href="#top">Inicio</a></p>
+          <p><a href="#productos">Productos</a></p>
+          <p><a href="#nosotros">Nosotros</a></p>
+          <p><a href="#contacto">Contacto</a></p>
+        </div>
+      </div>
+      <div class="copyright">© 2023 TANDEM M&G. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-fab" href="https://wa.me/529612713310?text=Hola%20Tandem%20M%26G%2C%20quiero%20informes%20por%20favor" target="_blank" aria-label="WhatsApp"></a>
+
+  <div id="custom-modal" class="modal" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar">×</button>
+      <h2 id="modal-title" class="h-romantic" style="margin:0 0 10px">Personalizar</h2>
+      <div class="modal-hero">
+        <img id="modal-img" src="" alt="">
+        <div style="font-size:.92rem; color:#666">Personaliza tu producto y calcula el envío a tu domicilio.</div>
+      </div>
+      <div id="modal-options" class="modal-options"></div>
+      <div class="delivery">
+        <button class="btn btn-outline" id="calc-delivery" type="button">Calcular envío</button>
+        <div class="delivery-panel" id="delivery-panel">
+          <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+            <label style="font-weight:600">Localidad:</label>
+            <select id="local-dest" style="padding:8px 10px; border-radius:10px; border:1px solid #ddd;">
+              <option value="">(Elegir destino)</option>
+              <option value="Acala">Acala ($50)</option>
+              <option value="Alfaro">Alfaro ($40)</option>
+              <option value="Cruz chiquita">Cruz chiquita ($50)</option>
+              <option value="Rizo de oro">Rizo de oro ($70)</option>
+              <option value="Unión Buenavista">Unión Buenavista ($90)</option>
+              <option value="Nuevo Vicente Guerrero">Nuevo Vicente Guerrero ($80)</option>
+              <option value="Luis Echeverría Álvarez">Luis Echeverría Álvarez ($110)</option>
+              <option value="Javier López Moreno">Javier López Moreno ($100)</option>
+            </select>
+          </div>
+          <div id="delivery-map"></div>
+          <div class="delivery-row"><span>Destino seleccionado:</span><span id="delivery-dest">—</span></div>
+          <div class="delivery-row"><span>Envío estimado:</span><strong id="delivery-cost">$0</strong></div>
+        </div>
+      </div>
+      <div class="price-summary card" style="margin-top:12px">
+        <div class="content" style="display:grid;grid-template-columns:1fr auto; row-gap:6px">
+          <div>Precio base:</div><div id="base-price-val">$0</div>
+          <div>Extras:</div><div id="extras-price-val">$0</div>
+          <div style="font-weight:700">Total:</div><div id="total-price-val" style="font-weight:700">$0</div>
+        </div>
+      </div>
+      <div style="margin-top:12px; display:flex; justify-content:flex-end">
+        <button id="add-to-cart" class="btn btn-primary" type="button">Agregar al Carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import './assets/js/main.js?v=7';
+  </script>
+</body>
+</html>
